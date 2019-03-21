@@ -49,6 +49,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bulma'
 end
 
+gem 'bulma_form_builder', github: "fwolfst/bulma_form_builder"
+
 gem 'material_design_icons'
 
 group :development, :test do
