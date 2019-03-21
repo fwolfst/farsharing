@@ -12,3 +12,11 @@
     .navbar-end
       .navbar-item
         .buttons
+          - if user_signed_in?
+            = link_to(destroy_user_session_path, method: :delete, class: ['button is-primary']) do
+              %strong= t('devise.sessions.destroy.sign_out')
+          - else
+            %a.button.is-primary(href=new_user_registration_path)
+              = t('devise.registrations.new.sign_up')
+            %a.button.is-primary(href=new_user_session_path)
+              %strong= t('devise.sessions.new.sign_in')
