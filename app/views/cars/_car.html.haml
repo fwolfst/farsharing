@@ -1,0 +1,13 @@
+.card
+  .card-header
+  .card-content
+    .media
+      .media-left
+        - if car.image.attached?
+          = image_tag car.image.variant(resize: '100x100')
+      .media-content
+        %h2.subtitle= display_name(car)
+        = car.license_plate
+  %footer.card-footer
+    = link_to t(:edit), edit_car_path(car), class: 'card-footer-item'
+    = link_to t(:view), car_path(car), class: 'card-footer-item'

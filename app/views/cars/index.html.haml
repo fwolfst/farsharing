@@ -1,0 +1,7 @@
+%h1.title= Car.model_name.human(count: 2)
+
+= render @cars
+
+- if allowed_to? :create
+  = link_to t(:car_create), new_car_path, class: 'button'
+

@@ -1,0 +1,29 @@
+%br
+.card
+  %header.card-header
+    %p.card-header-title
+      = Car.model_name.human
+      = display_name @car
+  .card-content
+    .media
+      .media-left
+        - if @car.image.attached?
+          = image_tag @car.image.variant(resize: '180x120')
+      .media-content
+        .content
+          %table.table.is-narrow
+            %tbody
+              - [:license_plate, :manufacture, :make, :num_seats].each do |attr|
+                %tr
+                  %th= Car.human_attribute_name(attr)
+                  %td= @car.send(attr)
+
+    - if @car.description.present?
+      %p
+        %b= Car.human_attribute_name(:description)
+        = @car.description
+
+  %footer.card-footer
+    %p.card-footer-item
+      %span
+        = link_to t('car.edit'), edit_car_path(@car)

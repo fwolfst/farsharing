@@ -1,0 +1,13 @@
+= form_for @car, builder: BulmaFormBuilder::HorizontalBulmaFormBuilder do |f|
+  = f.errors
+
+  = f.labeled_text_field :name, placeholder: t('name.placeholder')
+  = f.labeled_text_field :license_plate
+  = f.labeled_text_field :manufacture
+  = f.labeled_text_field :make
+  = f.labeled_number_field :num_seats
+  = f.labeled_text_area :description
+  = f.file_field :image
+  .actions
+    = f.submit 'Save'
+
