@@ -39,6 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'image_processing', '~> 1.2'
 
+gem 'action_policy', github: 'palkan/action_policy'
+
 gem 'devise'
 gem 'devise-i18n'
 

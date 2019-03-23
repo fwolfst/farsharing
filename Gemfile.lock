@@ -5,6 +5,12 @@ GIT
     bulma_form_builder (0.1.0)
       rails (~> 5.2.2)
 
+GIT
+  remote: https://github.com/palkan/action_policy.git
+  revision: 6acc37da9bf852db5ce7dca7fe8e740afc256933
+  specs:
+    action_policy (0.2.4)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -264,6 +270,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  action_policy!
   annotate
   better_errors
   binding_of_caller
