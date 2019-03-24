@@ -1,24 +1,46 @@
-# README
+# farsharing
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Carsharing is a prototype for subfeatures of a Ridesharing-application.
+In its prototypeicality it's restricted in its specific setup (i.e. shared vehicles).
 
-Things you may want to cover:
+Using Ruby (2.6.1) on Rails (5) as a framework.
 
-* Ruby version
+## Summary
 
-* System dependencies
+  tbd
 
-* Configuration
+## Installation and Setup
 
-* Database creation
+  git checkout
 
-* Database initialization
+  bundle
 
-* How to run the test suite
+  rails db:setup # with demo-data
 
-* Services (job queues, cache servers, search engines, etc.)
+or
 
-* Deployment instructions
+  rails db:schema:load # without demo-data
 
-* ...
+### Configuration
+
+## Development
+
+Following gems are bundled and provide helpful output for developers
+
+  i18n-tasks # shows untranslated keys
+
+  annotate # annotates model files
+
+  erd # create erd schema (to put in doc)
+
+### Tests
+
+  tbd, workflows not yet clear enough
+
+### Contributions
+
+## License
+
+farsharing is released under the GPLv3 or later (which is also included as file `LICENSE` in the source repository of farsharing) and Copyright 2019 Felix Wolfsteller .
+
+
