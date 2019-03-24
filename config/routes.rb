@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :cars
+  resources :events
   resources :locations
   resources :features
 

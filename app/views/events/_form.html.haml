@@ -1,0 +1,10 @@
+= form_for @event, builder: BulmaFormBuilder::HorizontalBulmaFormBuilder do |f|
+  = f.errors
+
+  = f.labeled_datetime_select :start_time
+  = f.labeled_datetime_select :end_time
+  = f.labeled_text_area :details
+  = f.labeled_collection_select :car_id, Car.all, :id, :name
+  .actions
+    = f.submit t(':save')
+

@@ -1,0 +1,30 @@
+%br
+.card
+  %header.card-header
+    %p.card-header-title
+      = Event.model_name.human
+      = @event
+  .card-content
+    .content
+      %table.table.is-narrow
+        %tbody
+          - [:details, :creator, :start_time, :end_time].each do |attr|
+            %tr
+              %th= Event.human_attribute_name(attr)
+              %td= @event.send(attr)
+
+    - if @event.car.present?
+      %p
+        %b= Event.human_attribute_name(:car)
+        = link_to display_name(@event.car), @event.car
+
+    - if @event.details.present?
+      %p
+        %b= Event.human_attribute_name(:details)
+        = @event.details
+
+
+  %footer.card-footer
+    %p.card-footer-item
+      %span
+        = link_to t('event.interaction.edit.button'), edit_event_path(@event)

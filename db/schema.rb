@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_24_135948) do
+ActiveRecord::Schema.define(version: 2019_03_24_163048) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -46,11 +46,25 @@ ActiveRecord::Schema.define(version: 2019_03_24_135948) do
     t.index ["name"], name: "index_cars_on_name", unique: true
   end
 
+  create_table "events", force: :cascade do |t|
+    t.integer "car_id"
+    t.integer "creator_id"
+    t.string "kind"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_events_on_car_id"
+    t.index ["creator_id"], name: "index_events_on_creator_id"
+  end
+
   create_table "features", force: :cascade do |t|
     t.string "name"
     t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_features_on_name", unique: true
   end
 
   create_table "location_features", force: :cascade do |t|
@@ -68,6 +82,7 @@ ActiveRecord::Schema.define(version: 2019_03_24_135948) do
     t.string "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_locations_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|

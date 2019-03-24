@@ -1,0 +1,13 @@
+.card
+  .card-header
+  .card-content
+    .content
+      = event.start_time
+      = event.end_time
+      = event.car
+      - if event.car
+        = link_to display_name(event.car), event.car
+  %footer.card-footer
+    = link_to t('event.interaction.edit.button'), edit_event_path(event), class: 'card-footer-item'
+    = link_to t('event.interaction.show.button'), event_path(event), class: 'card-footer-item'
+

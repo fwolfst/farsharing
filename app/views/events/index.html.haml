@@ -1,0 +1,7 @@
+%h1.title= Event.model_name.human(count: 2)
+
+= render @events
+
+- if allowed_to? :create?
+  = link_to t('event.interaction.create.button'), new_event_path, class: 'button'
+

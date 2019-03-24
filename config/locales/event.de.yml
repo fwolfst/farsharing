@@ -1,0 +1,30 @@
+de:
+  activerecord:
+    models:
+      event:
+        one: Ereignis
+        other: Ereignisse
+    attributes:
+      event:
+        start_time: Anfangszeit
+        end_time: Endzeit
+        kind: Art
+        details: Details
+        creator: Nutzer*
+        car: Fahrzeug
+  event:
+    interaction:
+      create:
+        heading: Ereignis eintragen
+        button: Neues Ereignis
+        success: Ereignis eingetragen
+      edit:
+        heading: Ereignis bearbeiten
+        button: Bearbeiten
+        success: Ereignis aktualisiert
+      show:
+        button: Anzeigen
+      destroy:
+        button: Löschen
+        success: Ereignis gelöscht
+    new: Neues Ereignis
