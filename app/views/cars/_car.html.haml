@@ -9,5 +9,5 @@
         %h2.subtitle= display_name(car)
         = car.license_plate
   %footer.card-footer
-    = link_to t(:edit), edit_car_path(car), class: 'card-footer-item'
-    = link_to t(:view), car_path(car), class: 'card-footer-item'
+    = link_to t('car.interaction.edit.button'), edit_car_path(car), class: 'card-footer-item'
+    = link_to t('car.interaction.show.button'), car_path(car), class: 'card-footer-item'
