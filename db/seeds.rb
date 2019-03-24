@@ -37,3 +37,7 @@ end
 # Cars
 small_car = Car.new(name: 'Beetly', manufacture: 'VW', make: 'Beetle', license_plate: 'SAW - SL 1', num_seats: 3, description: 'The coolest car unalive')
 big_car = Car.new(name: 'Roove', license_plate: 'SAW - SL 8', num_seats: 5)
+
+[small_car, big_car].each do |car|
+  car.save!
+end

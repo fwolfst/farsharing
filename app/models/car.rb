@@ -16,7 +16,7 @@
 class Car < ApplicationRecord
   validates :name, uniqueness: true
   validates :license_plate, uniqueness: true
-  validates :num_seats, numericality: true
+  validates :num_seats, numericality: { greater_than: 0 }
 
   validate :name_or_brandmake_presence
 
