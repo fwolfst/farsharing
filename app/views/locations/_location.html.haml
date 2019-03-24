@@ -1,0 +1,11 @@
+.card
+  .card-header
+  .card-content
+    .content
+      -#%h2.subtitle= display_name(name)
+      = location.name
+      = location.features.count
+  %footer.card-footer
+    = link_to t('location.interaction.edit.button'), edit_location_path(location), class: 'card-footer-item'
+    = link_to t('location.interaction.show.button'), location_path(location), class: 'card-footer-item'
+

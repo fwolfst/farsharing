@@ -1,0 +1,30 @@
+%br
+.card
+  %header.card-header
+    %p.card-header-title
+      = Location.model_name.human
+      = display_name @location
+  .card-content
+    .content
+      %table.table.is-narrow
+        %tbody
+          - [:details].each do |attr|
+            %tr
+              %th= Location.human_attribute_name(attr)
+              %td= @location.send(attr)
+
+    - if @location.details.present?
+      %p
+        %b= Location.human_attribute_name(:details)
+        = @location.details
+
+    - if @location.features.present?
+      %p
+        %b= Feature.model_name.human(count: @location.features.count)
+        - @location.features.each do |feature|
+          = link_to feature.name, feature
+
+  %footer.card-footer
+    %p.card-footer-item
+      %span
+        = link_to t('location.interaction.edit.button'), edit_location_path(@location)

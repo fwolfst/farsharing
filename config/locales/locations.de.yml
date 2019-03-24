@@ -1,0 +1,27 @@
+de:
+  activerecord:
+    models:
+      location:
+        one: Ort
+        other: Orte
+    attributes:
+      location:
+        name: Name
+        details: Details
+  location:
+    interaction:
+      create:
+        heading: Ort eintragen
+        button: Neuen Ort anlegen
+        success: Ort eingetragen
+      edit:
+        heading: Ort bearbeiten
+        button: Bearbeiten
+        success: Ort aktualisiert
+      show:
+        button: Anzeigen
+      destroy:
+        button: Löschen
+        success: Ort gelöscht
+    new: Neuer Ort
+

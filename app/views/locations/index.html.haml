@@ -1,0 +1,7 @@
+%h1.title= Location.model_name.human(count: 2)
+
+= render @locations
+
+- if allowed_to? :create?
+  = link_to t('location.interaction.create.button'), new_location_path, class: 'button'
+

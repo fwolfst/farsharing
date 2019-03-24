@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :cars
   devise_for :users
+
+  resources :cars
+  resources :locations
+  resources :features
+
   root to: 'pages#index'
 
   get 'pages/index'

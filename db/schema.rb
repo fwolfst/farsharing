@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_190846) do
+ActiveRecord::Schema.define(version: 2019_03_24_135948) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,30 @@ ActiveRecord::Schema.define(version: 2019_03_21_190846) do
     t.datetime "updated_at", null: false
     t.index ["license_plate"], name: "index_cars_on_license_plate", unique: true
     t.index ["name"], name: "index_cars_on_name", unique: true
+  end
+
+  create_table "features", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "location_features", force: :cascade do |t|
+    t.integer "location_id"
+    t.integer "feature_id"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["feature_id"], name: "index_location_features_on_feature_id"
+    t.index ["location_id"], name: "index_location_features_on_location_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

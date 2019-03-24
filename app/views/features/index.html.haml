@@ -1,0 +1,7 @@
+%h1.title= Feature.model_name.human(count: 2)
+
+= render @features
+
+- if allowed_to? :create?
+  = link_to t('feature.interaction.create.button'), new_feature_path, class: 'button'
+

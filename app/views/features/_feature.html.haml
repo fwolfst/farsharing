@@ -1,0 +1,8 @@
+.featured
+  .featured-header
+  .featured-content
+    .content
+      = feature.name
+  %footer.featured-footer
+    = link_to t('feature.interaction.edit.button'), edit_feature_path(feature), class: 'featured-footer-item'
+    = link_to t('feature.interaction.show.button'), feature_path(feature), class: 'featured-footer-item'
