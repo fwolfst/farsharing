@@ -1,27 +1,27 @@
+---
 de:
   activerecord:
+    attributes:
+      feature:
+        icon: Icon
+        name: Name
     models:
       feature:
         one: Orts-Merkmal
         other: Orts-Merkmale
-    attributes:
-      feature:
-        name: Name
-        icon: Icon
   feature:
     interaction:
       create:
-        heading: Orts-Merkmal anlegen
         button: Neues Orts-Merkmal
+        heading: Orts-Merkmal anlegen
         success: Orts-Merkmal eingetragen
-      edit:
-        heading: Merkmal bearbeiten
-        button: Bearbeiten
-        success: Merkmal aktualisiert
-      show:
-        button: Anzeigen
       destroy:
         button: Löschen
         success: Merkmal gelöscht
+      edit:
+        button: Bearbeiten
+        heading: Merkmal bearbeiten
+        success: Merkmal aktualisiert
+      show:
+        button: Anzeigen
     new: Neues Merkmal
-

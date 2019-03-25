@@ -1,31 +1,32 @@
+---
 de:
   activerecord:
+    attributes:
+      car:
+        description: Details
+        image: Bild
+        license_plate: Kennzeichen
+        make: Modell
+        manufacture: Hersteller
+        name: Name
+        num_seats: Anzahl Sitzplätze
     models:
       car:
         one: Fahrzeug
         other: Fahrzeuge
-    attributes:
-      car:
-        name: Name
-        manufacture: Hersteller
-        make: Modell
-        license_plate: Kennzeichen
-        num_seats: Anzahl Sitzplätze
-        description: Details
-        image: Bild
   car:
     interaction:
       create:
-        heading: Fahrzeug eintragen
         button: Neues Fahrzeug
+        heading: Fahrzeug eintragen
         success: Fahrzeug eingetragen
-      edit:
-        heading: Fahrzeug bearbeiten
-        button: Bearbeiten
-        success: Fahrzeug aktualisiert
-      show:
-        button: Anzeigen
       destroy:
         button: Löschen
         success: Fahrzeug gelöscht
+      edit:
+        button: Bearbeiten
+        heading: Fahrzeug bearbeiten
+        success: Fahrzeug aktualisiert
+      show:
+        button: Anzeigen
     new: Neues Fahrzeug
