@@ -1,0 +1,14 @@
+%tr
+  %td
+    = link_to display_name(timeline.resource), timeline.resource
+  - timeline.data.each do |slice, reservations|
+    %td
+      - if reservations.empty?
+        -#new_car_reservation_path(timeline.resource, reservation: {from_date: slice.begin, to_date: slice.end}) do
+        = link_to '1' do
+          .new-reservation
+            != "&nbsp;"
+      - reservations.each do |reservation|
+        .occupancy{class: timeline_cell_class(reservation, slice)}
+          =link_to t("ansehen"), event_path(reservation)
+

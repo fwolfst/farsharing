@@ -1,0 +1,30 @@
+.calendar-table td {
+  padding: 0px;
+
+  .occupancy {
+    background-color: #cdcdcd;
+    padding: 5px;
+    border-style: solid;
+    border-color: #343434;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+  }
+  .occupancy.open {            
+    border-left-width:  0px;   
+    border-right-width: 0px;   
+  } 
+  .occupancy.ends-left {       
+    border-left-width: 1px;    
+    border-right-width: 0px;   
+  } 
+  .occupancy.ends-right {
+    border-left-width: 0px;    
+    border-right-width: 1px;
+  }     
+  
+  .new-reservation {
+    display: block;
+    height: 100%;  
+  } 
+} 
+

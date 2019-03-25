@@ -1,0 +1,24 @@
+:ruby
+  num_days = timeline.data.reduce(Hash.new) do |day_count, slice|
+    day_count[slice[0].begin.to_date] ||= 0
+    day_count[slice[0].begin.to_date] = day_count[slice[0].begin.to_date] + 1
+    day_count
+  end
+
+-#%table.table.is-full-width
+.table-container
+  %table.table.calendar-table
+    %thead
+      %tr
+        %th(rowspan="2")= Car.model_name.human
+        - num_days.each do |day, count|
+          %th(colspan=count)
+            = l(day, format: :long)
+      %tr
+        - timeline.data.each do |slice, _reservations|
+          %th
+            = slice.end.strftime("%H:%M")
+    %tbody
+      = yield
+%br
+%br
