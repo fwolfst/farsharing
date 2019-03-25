@@ -16,4 +16,6 @@
 class Event < ApplicationRecord
   belongs_to :car, optional: true
   belongs_to :creator, class_name: 'User'
+
+  scope :between, ->(time_range) { where("start_time <= ? AND end_time >= ?", time_range.end, time_range.begin) }
 end

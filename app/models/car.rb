@@ -21,7 +21,7 @@ class Car < ApplicationRecord
   validate :name_or_brandmake_presence
 
   has_one_attached :image
-end
+  has_many :events
 
   def name_or_brandmake_presence
     if name.blank? && (manufacture.blank? || mark.blank?)
@@ -31,3 +31,4 @@ end
       errors[:make] << ""
     end
   end
+end

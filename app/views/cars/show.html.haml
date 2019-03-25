@@ -11,12 +11,21 @@
           = image_tag @car.image.variant(resize: '180x120')
       .media-content
         .content
-          %table.table.is-narrow
-            %tbody
-              - [:license_plate, :manufacture, :make, :num_seats].each do |attr|
-                %tr
-                  %th= Car.human_attribute_name(attr)
-                  %td= @car.send(attr)
+          .columns
+            .column.is-4
+              %table.table.is-narrow
+                %tbody
+                  - [:license_plate, :manufacture].each do |attr|
+                    %tr
+                      %th= Car.human_attribute_name(attr)
+                      %td= @car.send(attr)
+            .column.is-4
+              %table.table.is-narrow
+                %tbody
+                  - [:make, :num_seats].each do |attr|
+                    %tr
+                      %th= Car.human_attribute_name(attr)
+                      %td= @car.send(attr)
 
     - if @car.description.present?
       %p
@@ -27,3 +36,12 @@
     %p.card-footer-item
       %span
         = link_to t('car.interaction.edit.button'), edit_car_path(@car)
+
+%h2.subtitle= Event.model_name.human(count: @car.events.count)
+%ul
+  - @car.events.find_each do |event|
+    %li= link_to event.start_time, event
+
+%h2.subtitle= t(:as_time_line)
+= render layout: 'shared/timeline_table_head', locals: { timeline: @timeline } do
+  = render partial: 'shared/timeline_table_row', locals: { timeline: @timeline }

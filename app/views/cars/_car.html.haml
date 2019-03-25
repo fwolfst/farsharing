@@ -1,13 +1,21 @@
 .card
   .card-header
   .card-content
-    .media
-      .media-left
+    %article.media
+      %figure.media-left
         - if car.image.attached?
           = image_tag car.image.variant(resize: '100x100')
       .media-content
-        %h2.subtitle= display_name(car)
-        = car.license_plate
+        .content
+          .columns
+            .column.is-3
+              %h2.subtitle= display_name(car)
+              = car.license_plate
+            .column.is-9
+              %h2= Event.model_name.human(count: car.events.count)
+              - car.events.find_each do |event|
+                = link_to event.start_time, event
   %footer.card-footer
-    = link_to t('car.interaction.edit.button'), edit_car_path(car), class: 'card-footer-item'
+    = link_to t('car.interaction.book.button'), car_path(car), class: 'card-footer-item'
     = link_to t('car.interaction.show.button'), car_path(car), class: 'card-footer-item'
+    = link_to t('car.interaction.edit.button'), edit_car_path(car), class: 'card-footer-item'

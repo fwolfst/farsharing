@@ -10,6 +10,10 @@ class CarsController < ApplicationController
 
   def show
     authorize! @car
+
+    @timeline = TimelineCreator.for(
+      @car,
+      TimelineCreator.next_three_days)
   end
 
   def new

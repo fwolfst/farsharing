@@ -8,10 +8,14 @@
     .content
       %table.table.is-narrow
         %tbody
-          - [:details, :creator, :start_time, :end_time].each do |attr|
+          - [:details, :creator].each do |attr|
             %tr
               %th= Event.human_attribute_name(attr)
               %td= @event.send(attr)
+          - [:start_time, :end_time].each do |attr|
+            %tr
+              %th= Event.human_attribute_name(attr)
+              %td= l(@event.send(attr), format: :long)
 
     - if @event.car.present?
       %p
