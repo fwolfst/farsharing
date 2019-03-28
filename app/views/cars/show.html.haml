@@ -8,7 +8,7 @@
     .media
       .media-left
         - if @car.image.attached?
-          = image_tag @car.image.variant(resize: '180x120')
+          = image_tag @car.image.variant(resize: '180x120').processed
       .media-content
         .content
           .columns
@@ -42,6 +42,6 @@
   - @car.events.find_each do |event|
     %li= link_to event.start_time, event
 
-%h2.subtitle= t(:as_time_line)
+%h2.subtitle.has-text-centered= t(:as_time_line)
 = render layout: 'shared/timeline_table_head', locals: { timeline: @timeline } do
   = render partial: 'shared/timeline_table_row', locals: { timeline: @timeline }

@@ -4,7 +4,7 @@
     %article.media
       %figure.media-left
         - if car.image.attached?
-          = image_tag car.image.variant(resize: '100x100')
+          = image_tag car.image.variant(resize: '100x100').processed
       .media-content
         .content
           .columns
@@ -14,7 +14,7 @@
             .column.is-9
               %h2= Event.model_name.human(count: car.events.count)
               - car.events.find_each do |event|
-                = link_to event.start_time, event
+                = link_to display_from_to(event), event
   %footer.card-footer
     = link_to t('car.interaction.book.button'), car_path(car), class: 'card-footer-item'
     = link_to t('car.interaction.show.button'), car_path(car), class: 'card-footer-item'

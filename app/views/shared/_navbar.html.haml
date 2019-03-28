@@ -1,4 +1,4 @@
-%nav.navbar{"aria-label" => "main navigation", :role => "navigation"}
+%nav.navbar.is-light{"aria-label" => "main navigation", :role => "navigation"}
   .navbar-brand
     %a.navbar-item{:href => root_path}
       %img{:height => "28", :src => "#{image_url 'farsharing.png'}", :width => "112"}/
@@ -11,10 +11,14 @@
       = link_to t('pages.about'), pages_about_path, class: 'navbar-item'
       - if user_signed_in? && allowed_to?(:index?, Car)
         = link_to Car.model_name.human(count: 2), cars_path, class: 'navbar-item'
-      - if user_signed_in? && allowed_to?(:index?, Location)
-        = link_to Location.model_name.human(count: 2), locations_path, class: 'navbar-item'
-      - if user_signed_in? && allowed_to?(:index?, Feature)
-        = link_to Feature.model_name.human(count: 2), features_path, class: 'navbar-item'
+      .navbar-item.has-dropdown.is-hoverable
+        %a.navbar-link
+          = t(:definitions)
+        .navbar-dropdown
+          - if user_signed_in? && allowed_to?(:index?, Location)
+            = link_to Location.model_name.human(count: 2), locations_path, class: 'navbar-item'
+          - if user_signed_in? && allowed_to?(:index?, Feature)
+            = link_to Feature.model_name.human(count: 2), features_path, class: 'navbar-item'
     .navbar-end
       .navbar-item
         .buttons

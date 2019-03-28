@@ -1,5 +1,8 @@
 .calendar-table td {
   padding: 0px;
+  border-color: #eeeeee;
+  border-left-width: 1px;
+  border-right-width: 1px;
 
   .occupancy {
     background-color: #cdcdcd;
@@ -9,22 +12,35 @@
     border-top-width: 1px;
     border-bottom-width: 1px;
   }
-  .occupancy.open {            
-    border-left-width:  0px;   
-    border-right-width: 0px;   
+  .occupancy.open {
+    border-left-width:  0px;
+    border-right-width: 0px;
   } 
-  .occupancy.ends-left {       
-    border-left-width: 1px;    
-    border-right-width: 0px;   
+  .occupancy.ends-left {
+    border-left-width:  1px;
+    border-right-width: 0px;
+    border-top-left-radius:    9px;
+    border-bottom-left-radius: 9px;
   } 
   .occupancy.ends-right {
-    border-left-width: 0px;    
+    border-left-width:  0px;
     border-right-width: 1px;
+    border-top-right-radius:    9px;
+    border-bottom-right-radius: 9px;
   }     
   
   .new-reservation {
     display: block;
-    height: 100%;  
+    height: 100%;
   } 
 } 
 
+.calendar-table td.occupied {
+  border-left-width:  0px;
+  border-right-width: 0px;
+}
+
+.calendar-table.table thead th {
+  border-color: #ddd;
+  border-right-width: 1px;
+}

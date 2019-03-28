@@ -13,11 +13,11 @@
         %th(rowspan="2")= Car.model_name.human
         - num_days.each do |day, count|
           %th(colspan=count)
-            = l(day, format: :long)
+            = l(day, format: :mid)
       %tr
         - timeline.data.each do |slice, _reservations|
           %th
-            = slice.end.strftime("%H:%M")
+            = (slice.begin + (slice.end - slice.begin) / 2.0).strftime("%H:%M")
     %tbody
       = yield
 %br

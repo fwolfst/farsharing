@@ -2,13 +2,17 @@
   %td
     = link_to display_name(timeline.resource), timeline.resource
   - timeline.data.each do |slice, reservations|
-    %td
+    %td{class: timeline_cell_class(reservations)}
       - if reservations.empty?
         -#new_car_reservation_path(timeline.resource, reservation: {from_date: slice.begin, to_date: slice.end}) do
         = link_to '1' do
           .new-reservation
             != "&nbsp;"
       - reservations.each do |reservation|
-        .occupancy{class: timeline_cell_class(reservation, slice)}
-          =link_to t("ansehen"), event_path(reservation)
+        .occupancy{class: timeline_occupancy_class(reservation, slice)}
+          = link_to event_path(reservation) do
+            %center
+              %small
+                %span.icon
+                  %i.mdi.mdi-eye-settings-outline
 

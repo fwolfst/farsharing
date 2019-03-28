@@ -1,7 +1,13 @@
-%h1.title= Car.model_name.human(count: 2)
-
-= render @cars
-
-- if allowed_to? :create
-  = link_to t('car.interaction.create.button'), new_car_path, class: 'button'
-
+.section
+  %h1.title= Car.model_name.human(count: 2)
+  
+  = render @cars
+  
+  - if allowed_to? :create
+    = link_to t('car.interaction.create.button'), new_car_path, class: 'button'
+  
+.section.container
+  %h2.subtitle.has-text-centered= t(:as_time_line)
+  = render layout: 'shared/timeline_table_head', locals: { timeline: @timelines.first } do
+    = render partial: 'shared/timeline_table_row', collection: @timelines, as: :timeline
+  

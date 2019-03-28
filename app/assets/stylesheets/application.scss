@@ -18,3 +18,18 @@
 @import "bulma-form-builder";
 @import "timeline";
 
+#body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+footer.thin {
+  padding-bottom: 1rem;
+  padding-top:    1rem;
+}
