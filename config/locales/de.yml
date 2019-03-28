@@ -5,4 +5,5 @@ de:
   date:
     formats:
       mid: "%a %e. %b"
-  farsharing_is_licensed: ist Freie Software und unter der GPLv3 (oder einer späteren Version) veröffentlicht. Impressum.
+  farsharing_is_licensed_html: ist Freie Software und unter der <a href="https://opensource.org/licenses/GPL-3.0" target="_tab">GPLv3</a> (oder einer späteren Version) <a href="https://github.com/fwolfst/farsharing" target="_tab">veröffentlicht</a>.
+  resource_sharing: Ressourcen teilen
