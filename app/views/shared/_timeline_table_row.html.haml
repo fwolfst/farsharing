@@ -5,7 +5,7 @@
     %td{class: timeline_cell_class(reservations)}
       - if reservations.empty?
         -#new_car_reservation_path(timeline.resource, reservation: {from_date: slice.begin, to_date: slice.end}) do
-        = link_to '1' do
+        = link_to new_car_event_path(timeline.resource, event: { start_time: slice.begin, end_time: slice.end }) do
           .new-reservation
             != "&nbsp;"
       - reservations.each do |reservation|

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :cars
+  resources :cars do
+    resources :events, only: [:show, :new, :create], controller: 'cars/events'
+  end
   resources :events
   resources :locations
   resources :features
