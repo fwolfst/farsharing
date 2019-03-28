@@ -8,18 +8,24 @@
       %span{"aria-hidden" => "true"}
   #navbar.navbar-menu
     .navbar-start
-      = link_to t('pages.about'), pages_about_path, class: 'navbar-item'
       - if user_signed_in? && allowed_to?(:index?, Car)
-        = link_to Car.model_name.human(count: 2), cars_path, class: 'navbar-item'
-      .navbar-item.has-dropdown.is-hoverable
-        %a.navbar-link
-          = t(:definitions)
-        .navbar-dropdown
-          - if user_signed_in? && allowed_to?(:index?, Location)
-            = link_to Location.model_name.human(count: 2), locations_path, class: 'navbar-item'
-          - if user_signed_in? && allowed_to?(:index?, Feature)
-            = link_to Feature.model_name.human(count: 2), features_path, class: 'navbar-item'
+        = link_to cars_path, class: 'navbar-item' do
+          %span.icon
+            %i.mdi.mdi-car
+          = Car.model_name.human(count: 2)
+      - if user_signed_in? && allowed_to?(:index?, Location)
+        .navbar-item.has-dropdown.is-hoverable
+          %a.navbar-link
+            = t(:definitions)
+          .navbar-dropdown
+            - if user_signed_in? && allowed_to?(:index?, Location)
+              = link_to Location.model_name.human(count: 2), locations_path, class: 'navbar-item'
+            - if user_signed_in? && allowed_to?(:index?, Feature)
+              = link_to Feature.model_name.human(count: 2), features_path, class: 'navbar-item'
     .navbar-end
+      = link_to t('pages.about'), pages_about_path, class: 'navbar-item'
+      = link_to t('pages.impressum'), pages_impressum_path, class: 'navbar-item'
+      = link_to t('pages.privacy'), pages_privacy_path, class: 'navbar-item'
       .navbar-item
         .buttons
           - if user_signed_in?

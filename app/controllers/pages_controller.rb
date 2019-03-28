@@ -4,10 +4,13 @@ class PagesController < ApplicationController
   def index
   end
 
-  def contact
+  def about
   end
 
-  def about
+  def impressum
+  end
+
+  def contact
   end
 
   def privacy
