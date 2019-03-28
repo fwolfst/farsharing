@@ -4,8 +4,13 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cars = Car.all
+    @cars = Car.with_attached_image.all
     authorize!
+
+    @timelines = @cars.map do |car|
+      TimelineCreator.for(car,
+        TimelineCreator.next_three_days)
+    end
   end
 
   def show
