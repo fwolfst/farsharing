@@ -1,0 +1,8 @@
+de:
+  time:
+    formats:
+      mid: "%a %e.%m. %H:%M Uhr"
+  date:
+    formats:
+      mid: "%a %e. %b"
+  farsharing_is_licensed: ist Freie Software und unter der GPLv3 (oder einer späteren Version) veröffentlicht. Impressum.
