@@ -22,6 +22,8 @@ de:
         button: Bearbeiten
         heading: Merkmal bearbeiten
         success: Merkmal aktualisiert
+      save:
+        button: Speichern
       show:
         button: Anzeigen
     new: Neues Merkmal

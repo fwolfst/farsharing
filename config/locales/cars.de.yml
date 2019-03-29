@@ -10,12 +10,18 @@ de:
         manufacture: Hersteller
         name: Name
         num_seats: Anzahl Sitzplätze
+    errors:
+      models:
+        car:
+          name_or_make: Name oder Hersteller/Modell muss angegeben werden
     models:
       car:
         one: Fahrzeug
         other: Fahrzeuge
   car:
     interaction:
+      book:
+        button: Buchen
       create:
         button: Neues Fahrzeug
         heading: Fahrzeug eintragen
@@ -27,6 +33,12 @@ de:
         button: Bearbeiten
         heading: Fahrzeug bearbeiten
         success: Fahrzeug aktualisiert
+      save:
+        button: Speichern
       show:
         button: Anzeigen
     new: Neues Fahrzeug
+  cars:
+    form:
+      placeholder:
+        name: Fahrzeug(spitz-)name

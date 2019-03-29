@@ -14,6 +14,7 @@ de:
         one: Ereignis
         other: Ereignisse
   event:
+    from_to: "%{from} bis %{to}"
     interaction:
       create:
         button: Neues Ereignis
@@ -26,6 +27,8 @@ de:
         button: Bearbeiten
         heading: Ereignis bearbeiten
         success: Ereignis aktualisiert
+      save:
+        button: Speichern
       show:
         button: Anzeigen
     new: Neues Ereignis

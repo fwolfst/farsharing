@@ -25,7 +25,7 @@ class Car < ApplicationRecord
 
   def name_or_brandmake_presence
     if name.blank? && (manufacture.blank? || mark.blank?)
-      errors[:base] << I18n.t("Please provide either name or brand and make.")
+      errors[:base] << :name_or_make
       errors[:name] << ""
       errors[:manufacture] << ""
       errors[:make] << ""

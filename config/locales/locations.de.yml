@@ -22,6 +22,12 @@ de:
         button: Bearbeiten
         heading: Ort bearbeiten
         success: Ort aktualisiert
+      save:
+        button: Speichern
       show:
         button: Anzeigen
     new: Neuer Ort
+  locations:
+    form:
+      name:
+        placeholder: Ortsname
