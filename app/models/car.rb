@@ -24,7 +24,7 @@ class Car < ApplicationRecord
   has_many :events
 
   def name_or_brandmake_presence
-    if name.blank? && (manufacture.blank? || mark.blank?)
+    if name.blank? && (manufacture.blank? || make.blank?)
       errors[:base] << :name_or_make
       errors[:name] << ""
       errors[:manufacture] << ""
