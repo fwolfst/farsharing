@@ -26,6 +26,17 @@
       = link_to t('pages.about'), pages_about_path, class: 'navbar-item'
       = link_to t('pages.impressum'), pages_impressum_path, class: 'navbar-item'
       = link_to t('pages.privacy'), pages_privacy_path, class: 'navbar-item'
+      - if user_signed_in? && current_user.admin?
+        .navbar-item.has-dropdown.is-hoverable
+          %a.navbar-link
+            = t(:admin)
+          .navbar-dropdown
+            - if user_signed_in? && allowed_to?(:index?, User)
+              = link_to User.model_name.human(count: 2), admin_users_path, class: 'navbar-item'
+            - if user_signed_in? && allowed_to?(:index?, Location)
+              = link_to Location.model_name.human(count: 2), locations_path, class: 'navbar-item'
+            - if user_signed_in? && allowed_to?(:index?, Feature)
+              = link_to Feature.model_name.human(count: 2), features_path, class: 'navbar-item'
       .navbar-item
         .buttons
           - if user_signed_in?
