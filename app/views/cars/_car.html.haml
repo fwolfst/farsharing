@@ -16,6 +16,6 @@
               - car.events.find_each do |event|
                 = link_to display_from_to(event), event
   %footer.card-footer
-    = link_to t('car.interaction.book.button'), car_path(car), class: 'card-footer-item'
+    = link_to t('car.interaction.book.button'), new_car_event_path(car), class: 'card-footer-item'
     = link_to t('car.interaction.show.button'), car_path(car), class: 'card-footer-item'
     = link_to t('car.interaction.edit.button'), edit_car_path(car), class: 'card-footer-item'

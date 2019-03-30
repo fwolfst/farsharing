@@ -4,7 +4,7 @@ class CarsController < ApplicationController
   before_action :set_car, only: [:show, :edit, :update, :destroy]
 
   def index
-    @cars = Car.with_attached_image.all
+    @pagy, @cars = pagy(Car.with_attached_image.all, items: 10)
     authorize!
 
     @timelines = @cars.map do |car|

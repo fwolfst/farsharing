@@ -1,9 +1,15 @@
 class Cars::EventsController < ApplicationController
   before_action :authenticate_user!
 
-  before_action :set_car, only: [:show, :new, :create]
+  before_action :set_car, only: [:show, :new, :create, :index]
+
+  def index
+    authorize! @car, to: :show?
+    @events, @pagy = pagy(@car.events)
+  end
 
   def show
+    authorize! @car, to: :show?
     @event = Event.find(params[:id])
     authorize! @event
     render 'events/show'

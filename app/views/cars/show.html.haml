@@ -1,47 +1,53 @@
-%br
-.card
-  %header.card-header
-    %p.card-header-title
-      = Car.model_name.human
-      = display_name @car
-  .card-content
-    .media
-      .media-left
-        - if @car.image.attached?
-          = image_tag @car.image.variant(resize: '180x120').processed
-      .media-content
-        .content
-          .columns
-            .column.is-4
-              %table.table.is-narrow
-                %tbody
-                  - [:license_plate, :manufacture].each do |attr|
-                    %tr
-                      %th= Car.human_attribute_name(attr)
-                      %td= @car.send(attr)
-            .column.is-4
-              %table.table.is-narrow
-                %tbody
-                  - [:make, :num_seats].each do |attr|
-                    %tr
-                      %th= Car.human_attribute_name(attr)
-                      %td= @car.send(attr)
+.section
+  .card
+    %header.card-header
+      %p.card-header-title
+        = Car.model_name.human
+        = display_name @car
+    .card-content
+      .media
+        .media-left
+          - if @car.image.attached?
+            = image_tag @car.image.variant(resize: '180x120').processed
+        .media-content
+          .content
+            .columns
+              .column.is-4
+                %table.table.is-narrow
+                  %tbody
+                    - [:license_plate, :manufacture].each do |attr|
+                      %tr
+                        %th= Car.human_attribute_name(attr)
+                        %td= @car.send(attr)
+              .column.is-4
+                %table.table.is-narrow
+                  %tbody
+                    - [:make, :num_seats].each do |attr|
+                      %tr
+                        %th= Car.human_attribute_name(attr)
+                        %td= @car.send(attr)
+  
+      - if @car.description?
+        %p
+          %b= Car.human_attribute_name(:description)
+          = @car.description
+  
+    %footer.card-footer
+      %p.card-footer-item
+        %span
+          = link_to t('car.interaction.edit.button'), edit_car_path(@car)
+      %p.card-footer-item
+        %span
+          = link_to t('car.interaction.events.show.button'), edit_car_path(@car)
+  
+.section
+  %h2.subtitle.has-text-centered= t(:as_time_line)
+  = render layout: 'shared/timeline_table_head', locals: { timeline: @timeline } do
+    = render partial: 'shared/timeline_table_row', locals: { timeline: @timeline }
 
-    - if @car.description.present?
-      %p
-        %b= Car.human_attribute_name(:description)
-        = @car.description
-
-  %footer.card-footer
-    %p.card-footer-item
-      %span
-        = link_to t('car.interaction.edit.button'), edit_car_path(@car)
-
-%h2.subtitle= Event.model_name.human(count: @car.events.count)
-%ul
-  - @car.events.find_each do |event|
-    %li= link_to event.start_time, event
-
-%h2.subtitle.has-text-centered= t(:as_time_line)
-= render layout: 'shared/timeline_table_head', locals: { timeline: @timeline } do
-  = render partial: 'shared/timeline_table_row', locals: { timeline: @timeline }
+.section
+  %h2.subtitle= Event.model_name.human(count: @car.events.count)
+  %ul
+    - @car.events.find_each do |event|
+      %li= link_to event.start_time, event
+  
