@@ -23,10 +23,12 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    availability_check = AvailabilityCheck.new(@event.car, @event)
+
     @event.creator = current_user
     authorize! @event
 
-    if @event.save
+    if @event.valid? && availability_check.perform! && @event.save
       redirect_to @event, notice: t('event.interaction.create.success')
     else
       render :new

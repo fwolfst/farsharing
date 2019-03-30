@@ -25,4 +25,8 @@ class Event < ApplicationRecord
     self.start_time ||= DateTime.now
     self.end_time   ||= self.start_time + 1
   end
+
+  def time_range
+    start_time..end_time
+  end
 end
