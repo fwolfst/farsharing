@@ -4,11 +4,20 @@ de:
     attributes:
       event:
         car: Fahrzeug
+        car_id: Fahrzeug
         creator: Nutzer*
         details: Details
         end_time: Endzeit
         kind: Art
         start_time: Anfangszeit
+    errors:
+      models:
+        event:
+          attributes:
+            base:
+              resource_not_available: nicht verfügbar
+            car_id:
+              resource_not_available: nicht verfügbar
     models:
       event:
         one: Ereignis
