@@ -8,5 +8,5 @@
         %br/
         = f.email_field :email, autofocus: true, autocomplete: "email"
       .actions
-        = f.submit t('devise.passwords.new.send_me_reset_password_instructions')
+        = f.submit t('devise.passwords.new.send_me_reset_password_instructions'), class: 'button is-primary'
   = render "devise/shared/links"

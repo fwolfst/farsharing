@@ -6,6 +6,12 @@ de:
       mid: "%a %e. %b"
   definitions: Daten
   devise:
+    confirmations:
+      new:
+        resend_confirmation_instructions: Anleitung erneut senden
+    passwords:
+      new:
+        send_me_reset_password_instructions: Anleitung senden
     sessions:
       destroy:
         sign_out: Abmelden
