@@ -1,6 +1,6 @@
 # farsharing
 
-Carsharing is a prototype for subfeatures of a Ridesharing-application to explore collective resource management (and usage).
+farsharing is a prototype for subfeatures of a Ridesharing-application to explore collective resource management (and usage).
 In its pre-prototypeicality it's restricted in its specific setup (i.e. shared vehicles).
 
 Using Ruby (2.6.1) on Rails (5) as a framework.
@@ -18,6 +18,11 @@ It is adjusted towards a scenario where multiple application-users use (and mana
 The interface language is **german**, but fully translatable (using standard rails i18n mechanisms).
 
 A tiny discussion about potential solutions to specific use-cases can be found at [meta-community.org](https://meta-community.org/t/resourcenmanagement-mitfahrgelegenheiten-in-sieben-linden-und-bei-euch/206).
+
+### Design decisions
+
+  - Let server do the work (no 'client-heavy' JavaScript frameworks)
+  - to be written ...
 
 ## Installation and Setup
 
@@ -61,20 +66,29 @@ i18n-tasks # shows untranslated keys
 
 annotate # annotates model files
 
-erd # create erd schema (to put in doc)
+erd # create erd schema (to put in doc, or visit /erd)
 ```
+
+### Involved mentionable projects
+
+  * [bulma.io](bulma.io) CSS framework
+  * [pagy]() Navigation engine
+  * [action-policy]() Navigation engine
+  * [haml]() templating engine / HTML without closing tags but significant whitespace
+  * [material design icons]() Icon Font, never used these once before
+  * ...
+
 
 ### Tests
 
-  tbd, workflows not yet clear enough
+Some unit-style tests in `/test` (default task to run `rails t`), rest tbd, as the workflows not yet clear enough.
 
 ### Contributions
 
-Are very wellcome, currently we are in search of funding and/or stakeholders.  Drop me a line or file a github issue.
+Are very welcome, **currently we are in search of funding and/or stakeholders**.  Drop me a line or file a github issue.
 This should be an open and inclusive space, as e.g. underlined in the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 
 farsharing is released under the GPLv3 or later (which is also included as file [`LICENSE`](LICENSE) in the source repository of farsharing) and Copyright 2019 Felix Wolfsteller .
-
 
