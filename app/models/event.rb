@@ -21,6 +21,9 @@ class Event < ApplicationRecord
 
   after_initialize :set_default_times
 
+  validate :start_before_end
+  validate :start_not_end
+
   def set_default_times
     self.start_time ||= DateTime.now
     self.end_time   ||= self.start_time + 1
@@ -28,5 +31,22 @@ class Event < ApplicationRecord
 
   def time_range
     start_time..end_time
+  end
+
+  private
+  def start_before_end
+    if self.start_time > self.end_time
+      errors.add(:start_time, :must_be_before_end_time)
+      errors.add(:start_time, :we_fixed_that_for_you)
+      old_start_time  = self.start_time
+      self.start_time = self.end_time
+      self.end_time   = old_start_time
+    end
+  end
+
+  def start_not_end
+    if self.start_time == self.end_time
+      errors.add(:start_time, :cannot_be_end_time)
+    end
   end
 end

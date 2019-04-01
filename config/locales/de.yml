@@ -16,7 +16,9 @@ de:
       destroy:
         sign_out: Abmelden
   farsharing_is_licensed_html: ist Freie Software und unter der <a href="https://opensource.org/licenses/GPL-3.0" target="_tab">GPLv3</a> (oder einer späteren Version) <a href="https://github.com/fwolfst/farsharing" target="_tab">veröffentlicht</a>.
+  find_a_: Finde ein %{what}
   resource_sharing: Ressourcen teilen
+  search: Suchen
   time:
     formats:
       mid: "%a %e.%m. %H:%M Uhr"

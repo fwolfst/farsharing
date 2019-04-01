@@ -18,6 +18,10 @@ de:
               resource_not_available: nicht verfügbar
             car_id:
               resource_not_available: nicht verfügbar
+            start_time:
+              cannot_be_end_time: muss von Endzeit unterschiedlich sein
+              must_be_before_end_time: muss vor Endzeit liegen
+              we_fixed_that_for_you: und Endzeit vertauscht (wir haben das für dich geändert)
     models:
       event:
         one: Ereignis

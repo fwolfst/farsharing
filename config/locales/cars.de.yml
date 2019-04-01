@@ -13,6 +13,10 @@ de:
     errors:
       models:
         car:
+          attributes:
+            image:
+              must_be_jpeg_png_or_gif: muss eine Bild-Datei (JPEG, PNG oder GIF) sein
+              must_be_smaller_than_10mb: muss kleiner als 10 MB sein
           name_or_make: Name oder Hersteller/Modell muss angegeben werden
     models:
       car:
