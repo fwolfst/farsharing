@@ -3,6 +3,7 @@
   border-color: #eeeeee;
   border-left-width: 1px;
   border-right-width: 1px;
+  height: 100%;
 
   .occupancy {
     background-color: #cdcdcd;
@@ -11,6 +12,7 @@
     border-color: #343434;
     border-top-width: 1px;
     border-bottom-width: 1px;
+    height: 100%;
   }
   .occupancy.open {
     border-left-width:  0px;
@@ -43,4 +45,12 @@
 .calendar-table.table thead th {
   border-color: #ddd;
   border-right-width: 1px;
+}
+
+.calendar-table tr {
+  height: 3rem;
+}
+
+.calendar-table tr:last-child {
+  height: 3.2rem;
 }
