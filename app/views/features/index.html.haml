@@ -1,8 +1,16 @@
 .section
-  %h1.title= Feature.model_name.human(count: 2)
-  
-  = render @features
-  
-  - if allowed_to? :create?
-    = link_to t('feature.interaction.create.button'), new_feature_path, class: 'button'
-  
+  .level
+    .level-left
+      .leve-item
+        %h1.title= Feature.model_name.human(count: 2)
+    .level-right
+      .level-item
+        - if allowed_to? :create?
+          = link_to new_feature_path, class: 'button is-dark' do
+            %span.icon.is-small
+              %i.mdi.mdi-plus-circle
+            %span
+              = t('feature.interaction.create.button')
+
+  .columns
+    = render @features

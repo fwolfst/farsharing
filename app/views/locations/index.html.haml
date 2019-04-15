@@ -1,8 +1,16 @@
 .section
-  %h1.title= Location.model_name.human(count: 2)
+  .level
+    .level-left
+      .leve-item
+        %h1.title= Location.model_name.human(count: 2)
+    .level-right
+      .level-item
+        - if allowed_to? :create?
+          = link_to new_location_path, class: 'button is-dark' do
+            %span.icon.is-small
+              %i.mdi.mdi-plus-circle
+            %span
+              = t('location.interaction.create.button')
   
   = render @locations
-  
-  - if allowed_to? :create?
-    = link_to t('location.interaction.create.button'), new_location_path, class: 'button'
   

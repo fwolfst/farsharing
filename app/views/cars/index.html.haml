@@ -1,15 +1,24 @@
 .section
-  %h1.title= Car.model_name.human(count: 2)
+  .level
+    .level-left
+      .level-item
+        %h1.title= Car.model_name.human(count: 2)
+    .level-item
+    .level-right
+      .level-item
+        - if allowed_to? :create?
+          = link_to new_car_path, class: 'button is-dark' do
+            %span.icon.is-small
+              %i.mdi.mdi-plus-circle
+            %span
+              = t('car.interaction.create.button')
 
   != pagy_bulma_nav(@pagy) if @pagy.pages > 1
   = render @cars
   != pagy_bulma_nav(@pagy) if @pagy.pages > 1
   
-  - if allowed_to? :create
-    = link_to t('car.interaction.create.button'), new_car_path, class: 'button'
-  
 .section.container
-  %h2.subtitle.has-text-centered= t(:as_time_line)
+  %p.subtitle.has-text-centered= t(:as_time_line)
   = render layout: 'shared/timeline_table_head', locals: { timeline: @timelines.first } do
     = render partial: 'shared/timeline_table_row', collection: @timelines, as: :timeline
   

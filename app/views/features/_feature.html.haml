@@ -1,8 +1,11 @@
-.featured
-  .featured-header
-  .featured-content
-    .content
-      = feature.name
-  %footer.featured-footer
-    = link_to t('feature.interaction.edit.button'), edit_feature_path(feature), class: 'featured-footer-item'
-    = link_to t('feature.interaction.show.button'), feature_path(feature), class: 'featured-footer-item'
+.column
+  .card
+    .card-header
+    .card-content
+      = link_to edit_feature_path(feature) do
+        %span.tag.is-link
+          = feature.name
+      = feature.locations.count
+    %footer.card-footer
+      = link_to t('feature.interaction.edit.button'), edit_feature_path(feature), class: 'card-footer-item'
+      = link_to t('feature.interaction.show.button'), feature_path(feature), class: 'card-footer-item'
