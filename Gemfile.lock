@@ -58,6 +58,11 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    ahoy_email (1.0.3)
+      actionmailer (>= 4.2)
+      addressable (>= 2.3.2)
+      nokogiri
+      safely_block (>= 0.1.1)
     annotate (2.7.4)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
@@ -248,6 +253,8 @@ GEM
     ruby_parser (3.13.0)
       sexp_processor (~> 4.9)
     rubyzip (1.2.2)
+    safely_block (0.2.1)
+      errbase
     sass (3.7.3)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -308,6 +315,7 @@ PLATFORMS
 
 DEPENDENCIES
   action_policy!
+  ahoy_email
   annotate
   better_errors
   binding_of_caller

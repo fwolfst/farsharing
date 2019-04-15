@@ -48,6 +48,8 @@ gem 'rails-i18n'
 gem 'haml'
 gem 'haml-rails'
 
+gem 'ahoy_email'
+
 gem 'pagy'
 
 source 'https://rails-assets.org' do
