@@ -3,10 +3,10 @@ de:
   activerecord:
     attributes:
       ahoy/message:
-        to: An
-        subject: Betreff
-        mailer: Quelle
         content: Inhalt
+        mailer: Quelle
+        subject: Betreff
+        to: An
     models:
       ahoy/message:
         one: E-Mail
