@@ -1,0 +1,24 @@
+.section.container
+  .level
+    .level-left
+      .level-item
+        = link_to calendar_path(calendar: {day: :today}), class: 'button is-success' do
+          = t('calendar.today')
+      .level-item
+        -#.field.has-addons
+        -#  %p.control
+        -#    %input.input{type:"text", placeholder:t('find_a_drive')}
+        -#  %p.control
+        -#    %button.button
+        -#      = t('search')
+    .level-item
+      %h2.subtitle.has-text-centered= t(:as_time_line)
+    .level-right
+      .level-item
+        = link_to calendar_path(calendar: {week: :this}), class: 'button is-success' do
+          = t('calendar.week')
+
+  = render layout: 'shared/timeline_table_head', locals: { timeline: @timelines.first } do
+    = render partial: 'shared/timeline_table_row', collection: @timelines, as: :timeline
+  
+

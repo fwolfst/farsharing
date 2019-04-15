@@ -13,6 +13,7 @@
           %span.icon
             %i.mdi.mdi-car
           = Car.model_name.human(count: 2)
+      = link_to t('calendar'), calendar_path, class: 'navbar-item'
       - if user_signed_in? && allowed_to?(:index?, Location)
         .navbar-item.has-dropdown.is-hoverable
           %a.navbar-link

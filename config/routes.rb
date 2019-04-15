@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   resources :locations
   resources :features
 
+  resource :calendar, only: [:index, :show]
+
   namespace :admin do
     resources :users,  only: [:index, :show]
     resources :emails, only: [:index, :show]
