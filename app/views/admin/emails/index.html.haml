@@ -1,0 +1,24 @@
+%h1.title= Ahoy::Message.model_name.human(count: 2)
+
+%table.table.is-fullwidth
+  %thead
+    %tr
+      %th
+        = Ahoy::Message.human_attribute_name(:to)
+      %th
+        = Ahoy::Message.human_attribute_name(:subject)
+      %th
+        = Ahoy::Message.human_attribute_name(:sent_at)
+      %th
+        = Ahoy::Message.human_attribute_name(:mailer)
+      %th
+        = Ahoy::Message.human_attribute_name(:content)
+  %tbody
+    - @mails.each do |mail|
+      %tr
+        %td= mail.to
+        %td= mail.subject
+        %td= mail.sent_at
+        %td= mail.mailer
+        %td= mail.content
+

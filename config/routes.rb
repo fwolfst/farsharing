@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   resources :features
 
   namespace :admin do
-    resources :users, only: [:show, :index]
+    resources :users,  only: [:index, :show]
+    resources :emails, only: [:index, :show]
   end
 
   root to: 'pages#index'

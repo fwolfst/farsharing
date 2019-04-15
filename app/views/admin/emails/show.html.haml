@@ -1,0 +1,12 @@
+.level
+  .level-left
+    = link_to admin_emails_path, class: 'button' do
+      =t(:back_to_mails)
+  .level-item
+    %h1.title= t(:showing_mail)
+  .level-right
+    = link_to admin_emails_path, class: 'button' do
+      =t(:back_to_mails)
+
+.box
+  %pre=@mail.content

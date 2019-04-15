@@ -1,0 +1,13 @@
+---
+de:
+  activerecord:
+    attributes:
+      ahoy/message:
+        to: An
+        subject: Betreff
+        mailer: Quelle
+        content: Inhalt
+    models:
+      ahoy/message:
+        one: E-Mail
+        other: E-Mails
