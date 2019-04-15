@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_15_162949) do
+ActiveRecord::Schema.define(version: 2019_04_15_163314) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_04_15_162949) do
     t.string "mailer"
     t.text "subject"
     t.datetime "sent_at"
+    t.text "content"
     t.index ["user_type", "user_id"], name: "index_ahoy_messages_on_user_type_and_user_id"
   end
 
