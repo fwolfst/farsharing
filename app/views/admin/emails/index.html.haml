@@ -20,5 +20,5 @@
         %td= mail.subject
         %td= mail.sent_at
         %td= mail.mailer
-        %td= mail.content
+        %td= link_to t(:view), admin_email_path(mail), class: 'button'
 
