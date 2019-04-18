@@ -81,7 +81,7 @@ erd # create erd schema (to put in doc, or visit /erd)
 
 ### Tests
 
-Some unit-style tests in `/test` (default task to run `rails t`), rest tbd, as the workflows not yet clear enough.
+Some tests in `/test` (default task to run `rails t`), rest tbd, as the workflows not yet clear enough.
 
 ### Contributions
 
