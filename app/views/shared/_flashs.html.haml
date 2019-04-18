@@ -1,26 +1,27 @@
 - flash.each do |type, message|
-  .notification{ :class => bulma_flash_class[type] || 'is-primary' }
-    %button.delete(onclick="this.parentNode.parentNode.removeChild(this.parentNode);")
-    .media
-      .media-left
-        - case type
-        - when 'error'
-          %span.icon.has-text-warning
-            %i.mdi.mdi-alert-circle
-        - when 'alert'
-          %span.icon.has-text-danger
-            %i.mdi.mdi-alert-circle-outline
-        - when 'notice'
-          %span.icon.has-text-info
-            %i.mdi.mdi-information.mdi-36px.mdi-light
-        - when 'info'
-          %span.icon.has-text-notice.is-large
-            %i.mdi.mdi-information.mdi-36px.mdi-light
-        - when 'success'
-          %span.icon.has-text-warning
-            %i.mdi.mdi-checkbox-marked-circle.mdi-36px.mdi-light
-        - else
-          -# no icon
-    
-      .media-content
-        = message
+  - Array(message).each do |message|
+    .notification{ :class => bulma_flash_class[type] || 'is-primary' }
+      %button.delete(onclick="this.parentNode.parentNode.removeChild(this.parentNode);")
+      .media
+        .media-left
+          - case type
+          - when 'error'
+            %span.icon.has-text-warning
+              %i.mdi.mdi-alert-circle
+          - when 'alert'
+            %span.icon.has-text-danger
+              %i.mdi.mdi-alert-circle-outline
+          - when 'notice'
+            %span.icon.has-text-info
+              %i.mdi.mdi-information.mdi-36px.mdi-light
+          - when 'info'
+            %span.icon.has-text-notice.is-large
+              %i.mdi.mdi-information.mdi-36px.mdi-light
+          - when 'success'
+            %span.icon.has-text-warning
+              %i.mdi.mdi-checkbox-marked-circle.mdi-36px.mdi-light
+          - else
+            -# no icon
+      
+        .media-content
+          = message

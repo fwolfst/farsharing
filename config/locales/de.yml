@@ -1,10 +1,12 @@
 ---
 de:
   as_time_line: Kalender
+  calendar: Kalender
   date:
     formats:
       mid: "%a %e. %b"
   definitions: Daten
+  demo: Dies ist die Demo eines Prototyps.  Das heißt, Daten können verschwinden und Fehler auftauchen.  Auch wird die lückenhafte Datenschutzerklärung nicht ernstgenommen.  Melde Dich am Besten gar nicht erst an ;)
   devise:
     confirmations:
       new:
