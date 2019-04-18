@@ -5,8 +5,6 @@ GIT
     bulma_form_builder (0.1.0)
       rails (~> 5.2.2)
 
-  specs:
-
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
