@@ -50,6 +50,9 @@ gem 'rails-i18n'
 gem 'haml'
 gem 'haml-rails'
 
+gem 'redcarpet'
+gem 'emd'
+
 gem 'ahoy_email'
 
 gem 'pagy'

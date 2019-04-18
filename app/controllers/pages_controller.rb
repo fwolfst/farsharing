@@ -10,4 +10,6 @@ class PagesController < ApplicationController
   def contact ; end
 
   def privacy ; end
+
+  def changelog ; end
 end

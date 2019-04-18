@@ -111,6 +111,8 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.8.0)
       devise (>= 4.6)
+    emd (0.1.0)
+      redcarpet
     erd (0.6.3)
       nokogiri
       rails-erd (>= 0.4.5)
@@ -237,6 +239,7 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redcarpet (3.4.0)
     regexp_parser (1.4.0)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
@@ -323,6 +326,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise-i18n
+  emd
   erd
   faker
   haml
@@ -339,6 +343,7 @@ DEPENDENCIES
   rails (~> 5.2.2, >= 5.2.2.1)
   rails-assets-bulma!
   rails-i18n
+  redcarpet
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

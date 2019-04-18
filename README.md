@@ -5,6 +5,8 @@ In its pre-prototypeicality it's restricted in its specific setup (i.e. shared v
 
 Using Ruby (2.6.1) on Rails (5) as a framework.
 
+An installation (propably not up to date) can be found at [farsharing.econya.de](http://farsharing.econya.de). Use at your own risk; it is not at all meant to be production ready yet.
+
 ## Summary
 
 This project is done in order to
