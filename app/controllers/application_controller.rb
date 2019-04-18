@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
+  include FlashHelper
 
   before_action :set_current_user
   before_action :add_demo_notice
