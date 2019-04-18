@@ -1,0 +1,7 @@
+.notification.is-danger
+  %h1.title.has-centered-text= t(:please_read_and_accept_below)
+
+= render template: 'pages/privacy'
+
+.has-text-centered
+  = button_to t(:accept_tos), tos_acceptance_path, class: 'button is-primary', method: :post

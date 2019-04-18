@@ -4,11 +4,16 @@
 
 .has-text-centered
   Zuletzt geändert am 1.4.2019 .
+  - if current_user&.terms_accepted_at
+    %br
+    (von Dir als gelesen und akzeptiert markiert am #{l(current_user.terms_accepted_at)})
+    %br
+    %br
 
 %table.table
   %tr
-    %th Welche Daten
-    %td Warum
+    %th Welche Daten?
+    %td Warum, Wozu?
   %tr
     %th E-Mail Adresse
     %td Als Login und um Abläufe, die die Anmeldung an der Dienstleistung betreffen abzuwickeln. Applikations-spezifische Benachrichtigungen.
@@ -66,13 +71,13 @@
         Wie lange wir deine Daten speichern
       
       %p
-        Die Daten werden im Sinne der Nutzer/innen so lange gespeichert, bis der/die Nutzer/in um eine Löschung bittet. Dazu reicht eine einfache mail an bildungsreferat@siebenlinden.org (oder ein Anruf bei o.g. Telefonnummer).
+        Die Daten werden im Sinne der Nutzer/innen so lange gespeichert, bis der/die Nutzer/in um eine Löschung bittet. Dazu reicht eine einfache mail an @siebenlinden.org (oder ein Anruf bei o.g. Telefonnummer).
       
       %h2.subtitle.has-text-centered
         Welche Rechte du an deinen Daten hast
       
       %p
-        Du kannst jederzeit eine Löschung oder Herausgabe der Daten verlangen. Dazu reicht eine einfache mail an bildungsreferat@siebenlinden.org (oder ein Anruf bei o.g. Telefonnummer).
+        Du kannst jederzeit eine Löschung oder Herausgabe der Daten verlangen. Dazu reicht eine einfache mail an @siebenlinden.org (oder ein Anruf bei o.g. Telefonnummer).
       
       %h2.subtitle.has-text-centered
         Wie wir deine Daten schützen
@@ -86,10 +91,10 @@
       %p
         Keine 
 
-.content
-  %h2.subtitle.has-text-centered
-    Bsp Unterpunkt
-  
-  %p
-    Bsp Paragraph
+-#.content
+-#  %h2.subtitle.has-text-centered
+-#    Bsp Unterpunkt
+-#  
+-#  %p
+-#    Bsp Paragraph
 

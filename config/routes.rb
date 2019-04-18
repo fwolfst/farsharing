@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   get 'pages/impressum'
   get 'pages/contact'
   get 'pages/privacy'
+
+  resource :tos, only: :show
+  resource :tos_acceptance, only: :create
 end
