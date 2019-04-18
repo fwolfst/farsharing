@@ -17,7 +17,9 @@
       %p
         %b= Location.model_name.human(count: @feature.locations.count)
         - @feature.locations.each do |location|
-          = link_to location.name, location
+          = link_to location do
+            %span.tag.is-light
+              = location.name
 
   %footer.card-footer
     %p.card-footer-item
