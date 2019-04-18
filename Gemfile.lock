@@ -5,16 +5,13 @@ GIT
     bulma_form_builder (0.1.0)
       rails (~> 5.2.2)
 
-GIT
-  remote: https://github.com/palkan/action_policy.git
-  revision: 98095adbe886d2d61a16cee4e8b56549b7f1e1e1
   specs:
-    action_policy (0.3.0)
 
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
   specs:
+    action_policy (0.3.0)
     actioncable (5.2.3)
       actionpack (= 5.2.3)
       nio4r (~> 2.0)
@@ -315,7 +312,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  action_policy!
+  action_policy
   ahoy_email
   annotate
   better_errors

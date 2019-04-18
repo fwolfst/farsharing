@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -38,7 +40,7 @@ gem 'pg'
 
 gem 'image_processing', '~> 1.2'
 
-gem 'action_policy', github: 'palkan/action_policy'
+gem 'action_policy'
 
 gem 'devise'
 gem 'devise-i18n'
