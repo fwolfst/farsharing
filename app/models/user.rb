@@ -30,6 +30,6 @@ class User < ApplicationRecord
   after_create :set_accepted_tos_at
 
   def set_accepted_tos_at
-    self.update(terms_accepted_at: DateTime.now)
+    update(terms_accepted_at: DateTime.now)
   end
 end
