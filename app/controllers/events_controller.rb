@@ -38,7 +38,8 @@ class EventsController < ApplicationController
   def update
     authorize! @event
     if @event.update(event_params)
-      redirect_to @event, notice: t('event.interaction.edit.success')
+      add_flash :notice, t('event.interaction.edit.success')
+      redirect_to @event
     else
       render :edit
     end
@@ -47,7 +48,8 @@ class EventsController < ApplicationController
   def destroy
     authorize! @event
     @event.destroy
-    redirect_to events_url, notice: t('event.interaction.destroy.success')
+    add_flash notice: t('event.interaction.destroy.success')
+    redirect_to events_url
   end
 
   private

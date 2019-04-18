@@ -26,7 +26,8 @@ class LocationsController < ApplicationController
     authorize! @location
 
     if @location.save
-      redirect_to @location, notice: t('location.interaction.create.success')
+      add_flash notice: t('location.interaction.create.success')
+      redirect_to @location
     else
       render :new
     end
@@ -35,7 +36,8 @@ class LocationsController < ApplicationController
   def update
     authorize! @location
     if @location.update(location_params)
-      redirect_to @location, notice: t('location.interaction.edit.success')
+      add_flash notice: t('location.interaction.edit.success')
+      redirect_to @location
     else
       render :edit
     end
@@ -44,7 +46,8 @@ class LocationsController < ApplicationController
   def destroy
     authorize! @location
     @location.destroy
-    redirect_to locations_url, notice: t('location.interaction.destroy.success')
+    add_flash notice: t('location.interaction.destroy.success')
+    redirect_to locations_url
   end
 
   private

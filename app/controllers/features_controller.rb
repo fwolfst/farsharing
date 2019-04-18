@@ -26,7 +26,8 @@ class FeaturesController < ApplicationController
     authorize! @feature
 
     if @feature.save
-      redirect_to @feature, notice: t('feature.interaction.create.success')
+      add_flash notice: t('feature.interaction.create.success')
+      redirect_to @feature
     else
       render :new
     end
@@ -35,7 +36,8 @@ class FeaturesController < ApplicationController
   def update
     authorize! @feature
     if @feature.update(feature_params)
-      redirect_to @feature, notice: t('feature.interaction.edit.success')
+      add_flash notice: t('feature.interaction.edit.success')
+      redirect_to @feature
     else
       render :edit
     end
@@ -44,7 +46,8 @@ class FeaturesController < ApplicationController
   def destroy
     authorize! @feature
     @feature.destroy
-    redirect_to features_url, notice: t('feature.interaction.destroy.success')
+    add_flash notice: t('feature.interaction.destroy.success')
+    redirect_to features_url
   end
 
   private

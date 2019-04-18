@@ -35,7 +35,8 @@ class CarsController < ApplicationController
     authorize! @car
 
     if @car.save
-      redirect_to @car, notice: t('car.interaction.create.success')
+      add_flash notice: t('car.interaction.create.success')
+      redirect_to @car
     else
       render :new
     end
@@ -44,7 +45,8 @@ class CarsController < ApplicationController
   def update
     authorize! @car
     if @car.update(car_params)
-      redirect_to @car, notice: t('car.interaction.edit.success')
+      add_flash notice: t('car.interaction.edit.success')
+      redirect_to @car
     else
       render :edit
     end
@@ -53,7 +55,8 @@ class CarsController < ApplicationController
   def destroy
     authorize! @car
     @car.destroy
-    redirect_to cars_url, notice: t('car.interaction.destroy.success')
+    add_flash notice: t('car.interaction.destroy.success')
+    redirect_to cars_url
   end
 
   private
