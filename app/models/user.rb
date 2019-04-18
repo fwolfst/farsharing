@@ -15,6 +15,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  admin                  :boolean          default(FALSE)
+#  terms_accepted_at      :datetime
 #
 
 class User < ApplicationRecord
@@ -23,4 +24,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
+
+  validates_acceptance_of :tos_agreement, :allow_nil => false, on: :create
+
+  after_create :set_accepted_tos_at
+
+  def set_accepted_tos_at
+    self.update(terms_accepted_at: DateTime.now)
+  end
 end

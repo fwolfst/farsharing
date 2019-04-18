@@ -17,6 +17,9 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "new-password"
+      .field
+        = f.check_box :tos_agreement
+        = f.label :tos_agreement, t(:read_and_accepted_tos_html, privacy_path: pages_privacy_path)
       .actions
         = f.submit t('devise.registrations.new.sign_up'), class: 'button is-primary'
   = render "devise/shared/links"

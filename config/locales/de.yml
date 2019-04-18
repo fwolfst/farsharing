@@ -24,3 +24,8 @@ de:
   time:
     formats:
       mid: "%a %e.%m. %H:%M Uhr"
+  activerecord:
+    attributes:
+      user:
+        tos_agreement: AGB und Datenschutzerklärung
+  read_and_accepted_tos_html: <a href="%{privacy_path}">AGB und Datenschutzerklärung</a> gelesen und akzeptiert
