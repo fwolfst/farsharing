@@ -1,0 +1,39 @@
+# == Schema Information
+#
+# Table name: cars
+#
+#  id            :integer          not null, primary key
+#  name          :string
+#  manufacture   :string
+#  make          :string
+#  license_plate :string
+#  num_seats     :integer          default(5)
+#  description   :text
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  manufacture: MyString
+  make: MyString
+  license_plate: BE - TLE
+  num_seats: 1
+  description: MyText
+
+two:
+  name: Bobby Car
+  manufacture: MyString
+  make: MyString
+  license_plate: Bo - b1
+  num_seats: 1
+  description: MyText
+
+bunny_mobile:
+  name: Bunny Mobile Easter Car
+  manufacture: ACME Corp
+  make: egg-1
+  license_plate: EA-ST RN
+  num_seats: 1
