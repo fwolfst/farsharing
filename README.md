@@ -1,5 +1,7 @@
 # farsharing
 
+[![Build Status](https://travis-ci.org/fwolfst/farsharing.svg?branch=master)](https://travis-ci.org/fwolfst/farsharing)
+
 farsharing is a prototype for subfeatures of a Ridesharing-application to explore collective resource management (and usage).
 In its pre-prototypeicality it's restricted in its specific setup (i.e. shared vehicles).
 
