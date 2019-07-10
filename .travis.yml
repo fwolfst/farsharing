@@ -1,0 +1,12 @@
+language: ruby
+cache: bundler
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rake
+#env:
+#  HOST: localhost
+#  MAILER_HOST: localhost
+#  SENDER_EMAIL: "Farsharing\ Your\ Community\ <registration@yourhost.commm>"
+#  SMTP_SERVER: localhost
+#  SMTP_DOMAIN: localhost
+#  SMTP_PORT: 587
